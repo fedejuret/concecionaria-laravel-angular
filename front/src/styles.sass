@@ -1,0 +1,193 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Syne&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap')
+
+$primary-font: 'Syne', sans-serif
+$hover-color: #EA2027
+$active-color: #fc5c65
+
+a.nav-link
+	font-size: 15px
+a.model_active
+	color: $active-color !important
+	font-weight: bolder !important
+	background: linear-gradient(to right, $active-color, $active-color)
+	background-size: 100% 3px
+	background-repeat: no-repeat
+	background-position: bottom left
+	display: inline-block
+.vertical-nav
+	min-width: 17rem
+	width: 17rem
+	height: 100vh
+	position: fixed
+	top: 0
+	right: 0
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1)
+	transition: all 0.4s
+	z-index: 1
+#sidebar
+	margin-right: -17rem
+	hr
+		background-color: #f1f1f1
+		height: 2px
+		
+	a
+		float: right
+		display: inline-block
+		color: #f1f1f1
+		font-size: 20px
+		padding: 10px 5px
+		font-family: 'Roboto', sans-serif
+		transition: .3s
+		background: linear-gradient(to left, $active-color, $active-color)
+		background-size: 0% 3px
+		background-repeat: no-repeat
+		background-position: bottom right
+
+		&:hover
+			background-size: 100% 3px
+			color: $active-color
+			cursor: pointer
+
+	a.menu
+		padding-right: 5px
+		font-size: 17px
+		padding-bottom: 30px
+		background: none
+		&:hover
+			opacity: 1
+			background-size: none
+			color: #f1f1f1
+#sidebar.active
+	margin-right: 0rem
+.navbar
+	svg
+		font-size: 20px
+		color: #f1f1f1
+
+.bg-none
+	background: none !important
+
+.container
+	.title
+		margin-top: 60px
+		text-align: center
+		@media (max-width: 720px)
+			text-align: justify
+		h1
+			font-family: $primary-font
+			font-weight: normal
+			letter-spacing: 2px
+			font-size: 60px
+			text-transform: none
+			display: inline-block
+			background: linear-gradient(to right, #000, #000)
+			background-position: left bottom
+			background-size: 80% 5px
+			background-repeat: no-repeat
+			transition: .5s
+			&:hover
+				background-size: 100% 5px
+			@media (max-width: 720px)
+				font-size: 30px
+				letter-spacing: 1px
+				display: block
+				background: none
+
+
+.card
+	.card-header
+		border-bottom: none !important
+	.card-footer
+		border-top: none !important
+	.card-body
+		padding: 0px !important
+		margin-top: 0px !important
+	-webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75)
+	-moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75)
+	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75)
+	border: none !important
+	span
+		font-size: 25px
+
+
+.filters
+	margin-top: 50px
+	.line
+		height: 2px
+		width: 100%
+		background: #000
+		margin-top: 30px
+	#categories
+		h5
+			font-family: $primary-font
+		a
+			margin-right: 10px
+			font-size: 17px
+			&:hover
+				color: $hover-color
+	#orderby
+		.dropdownn
+			position: relative !important
+			display: inline-block !important
+		
+		.dropdown-contentn
+			display: none
+			position: absolute
+			background-color: #f9f9f9
+			min-width: 250px
+			border: 1px #aaa solid
+			z-index: 1
+			ul
+				margin: 0px
+				padding: 0px
+				li
+					list-style: none
+					padding: 10px
+					background: #fff
+					border-left: 5px #f9f9f9 solid
+					border: 1px #f9f9f9 solid
+					&:hover
+						border-left: 5px $hover-color solid
+					&:hover > a
+						color: $hover-color
+					a
+						span
+							font-weight: bold
+		.dropdown-contentn.show
+			display: block
+
+
+#cars
+	margin-top: 30px
+
+
+#carDetail
+	margin-top: 100px
+	.title-detail
+		margin-left: 200px
+		padding-top: 100px
+		h1
+			font-family: 'Roboto', sans-serif
+			font-size: 60px
+			text-transform: none
+		@media (max-width: 720px)
+			margin: 0px !important
+			text-align: center
+			padding-bottom: 30px
+			padding-top: 50px !important
+	.description
+		margin-left: 100px
+		margin-top: 50px
+		border-left: 5px $hover-color solid
+		@media (max-width: 720px)
+			margin: 25px 0px
+		p
+			text-decoration: none
+			text-transform: none
+			padding-left: 10px
+			text-align: justify
+			font-family: 'Poppins', sans-serif
+			font-size: 17px
+

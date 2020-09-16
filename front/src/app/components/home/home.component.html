@@ -1,0 +1,71 @@
+<div class="container">
+	<div class="title">
+		<h1>Encuentra el auto ideal</h1>
+	</div>
+
+	<div class="filters">
+		<div class="row">
+			<div class="col-12 col-md-8" id="categories">
+				<h5 class="text-muted my-4">CATEGORIAS</h5>
+				<a type="button" (click)="getAllCarsBtn()">Todos</a>
+				<a type="button" (click)="showByCategory(category.id)" *ngFor="let category of categories">{{category.name}}</a>
+			</div>
+			<div class="col-12 col-md-4 text-lg-right text-md-right text-left my-4" id="orderby">
+				<div class="dropdownn">
+				  <span type="button" (click)="showOrder()">Filtrar por <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+					</svg></span>
+
+				  <div class="dropdown-contentn text-left" id="dropList">
+
+				  	<ul>
+				  		<li><a type="button" (click)="sortCars(-1)">Restablecer &times;</a></li>
+				  		<li><a type="button" (click)="sortCars(1)">De <span>mayor</span> a <span>menor</span> precio</a></li>
+				  		<li><a type="button" (click)="sortCars(2)">De menor a mayor precio</a></li>
+				  		<li><a type="button" (click)="sortCars(3)">Nuevos primero</a></li>
+				  		<li><a type="button" (click)="sortCars(4)">Antiguos primero</a></li>
+				  	</ul>
+				  </div>
+				</div>
+			</div>
+		</div>		
+		<div class="line"></div>
+	</div>	
+
+	<div class="row">
+		<div class="col-12 col-lg-4 my-5" *ngFor="let car of cars" id="cars">
+			
+			<div class="card">
+				
+				<div class="card-header text-center bg-none">
+					<h3>{{car.name}} | {{car.model}}</h3>
+					<p>
+						<span>$</span> {{car.price | currency : "$" }}
+					</p>
+				</div>
+
+				<div class="card-body text-center">
+					<div class="car-image">
+						<img src="http://45.233.140.208/desarrollo_ceo/back/public/image/{{car.list_image}}" alt="Imagen del auto {{car.name}}" class="img-fluid">
+					</div>
+				</div>
+
+				<div class="card-footer bg-none">
+					<a class="btn btn-primary btn-block" [routerLink]="['/car', car.id]">VER MÁS</a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-12 mt-5" *ngIf="!cars">
+			<div class="d-flex justify-content-center">
+			  <div class="spinner-border" role="status">
+			    <span class="sr-only">Loading...</span>
+			  </div>
+			</div>
+		</div>
+
+	</div>
+</div>
+

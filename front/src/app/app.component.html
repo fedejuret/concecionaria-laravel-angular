@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" [routerLink]="['/home']" type="button">EGO</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavv" aria-controls="navbarNav" aria-expanded="false">
+    <a (click)="openSidebar()" type="button" class="nav-link menu">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+    </a>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+
+      <li class="nav-item" *ngIf="model_active">
+        <a class="nav-link model_active" [routerLink]="['/home']">Modelos</a>
+      </li>
+
+      <li class="nav-item" *ngIf="!model_active">
+        <a class="nav-link" [routerLink]="['/home']">Modelos</a>
+      </li>
+
+      <li class="nav-item" *ngIf="ficha_active">
+        <a class="nav-link model_active" type="button">Ficha Tecnica</a>
+      </li>
+
+      <li class="nav-item" *ngIf="!ficha_active">
+        
+        <a class="nav-link" type="button">Ficha Tecnica</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+    	<li class="nav-item">
+    		<a (click)="openSidebar()" type="button" class="nav-link menu">Menu 
+    		<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			  <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+			</svg>
+		</a>
+    	</li>
+    </ul>
+  </div>
+</nav>
+
+<div class="vertical-nav bg-primary" id="sidebar">
+
+  <ul class="nav flex-column bg-primary mb-0">
+    <li class="nav-item mt-4">
+        <a (click)="openSidebar()" type="button" class="nav-link menu">Menu &times;
+        </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Servicios</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Accesorios</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Financiación</a>
+    </li>
+    <li class="nav-item">
+      <hr>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Sucursales</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Modelos</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Tecnología</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Seguridad</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Pruebas</a>
+    </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
